@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Admin Dashboard</p>
+          <h1>Hospital Management System</h1>
+        </div>
+        <button id="resetData" class="secondary-btn">Reset Demo Data</button>
+      </header>
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <span class="label">Patients</span>
+          <strong id="patientCount">0</strong>
+        </div>
+        <div class="stat-card">
+          <span class="label">Doctors</span>
+          <strong id="doctorCount">0</strong>
+        </div>
+        <div class="stat-card">
+          <span class="label">Appointments</span>
+          <strong id="appointmentCount">0</strong>
+        </div>
+      </section>
+
+      <main class="main-grid">
+        <section class="panel">
+          <h2>Add Patient</h2>
+          <form id="patientForm">
+            <input type="text" name="name" placeholder="Patient name" required />
+            <input type="number" name="age" placeholder="Age" min="0" required />
+            <select name="gender" required>
+              <option value="">Select gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+            <input type="tel" name="phone" placeholder="Phone" required />
+            <input type="text" name="condition" placeholder="Condition" required />
+            <button type="submit">Save Patient</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <h2>Add Doctor</h2>
+          <form id="doctorForm">
+            <input type="text" name="name" placeholder="Doctor name" required />
+            <input type="text" name="specialty" placeholder="Specialty" required />
+            <button type="submit">Save Doctor</button>
+          </form>
+        </section>
+
+        <section class="panel full-width">
+          <h2>Book Appointment</h2>
+          <form id="appointmentForm">
+            <select id="patientSelect" name="patientId" required>
+              <option value="">Select patient</option>
+            </select>
+            <select id="doctorSelect" name="doctorId" required>
+              <option value="">Select doctor</option>
+            </select>
+            <input type="date" name="date" required />
+            <input type="time" name="time" required />
+            <button type="submit">Book Appointment</button>
+          </form>
+        </section>
+      </main>
+
+      <section class="panel">
+        <h2>Patients</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Phone</th>
+                <th>Condition</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="patientTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Doctors</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Specialty</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="doctorTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel full-width">
+        <h2>Appointments</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Patient</th>
+                <th>Doctor</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="appointmentTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
